@@ -1,0 +1,24 @@
+.details-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.answer-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.answer-actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.accepted {
+  color: green;
+  font-weight: bold;
+}

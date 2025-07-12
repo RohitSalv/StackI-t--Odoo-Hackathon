@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+
+<div class="form-container">
+
+  <h2>Ask a New Question</h2>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="Enter your question title" [(ngModel)]="title">
+  </mat-form-field>
+
+  <label>Description</label>
+  <ngx-editor [editor]="editor" [(ngModel)]="description"></ngx-editor>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Tags (comma-separated)</mat-label>
+    <input matInput placeholder="e.g. Angular, Java, Backend" [(ngModel)]="tags">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="submitQuestion()">Submit</button>
+
+</div>

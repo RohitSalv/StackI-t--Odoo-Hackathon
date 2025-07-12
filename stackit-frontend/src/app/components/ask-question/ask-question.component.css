@@ -1,0 +1,16 @@
+.form-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+ngx-editor {
+  min-height: 200px;
+  display: block;
+  margin-bottom: 20px;
+}

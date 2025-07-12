@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+
+<div class="details-container">
+
+  <h2>{{ question?.title }}</h2>
+  <p [innerHTML]="question?.description"></p>
+  <small>Posted by {{ question?.username }} • {{ question?.createdAt | date }}</small>
+
+  <hr>
+
+  <h3>Answers ({{ answers.length }})</h3>
+
+  <div *ngFor="let ans of answers" class="answer-card">
+    <p [innerHTML]="ans.content"></p>
+    <small>By {{ ans.user?.username }} • {{ ans.createdAt | date }}</small>
+    <div class="answer-actions">
+      <button mat-mini-button color="accent" (click)="upvote(ans.id)">👍 Upvote</button>
+      <button mat-mini-button color="primary" *ngIf="!ans.accepted" (click)="acceptAnswer(ans.id)">✔️ Accept</button>
+      <span *ngIf="ans.accepted" class="accepted">✔️ Accepted</span>
+    </div>
+  </div>
+
+  <h3>Add Your Answer</h3>
+
+  <ngx-editor [editor]="editor" [(ngModel)]="newAnswer"></ngx-editor>
+  <button mat-raised-button color="primary" (click)="submitAnswer()" style="margin-top: 10px;">Submit Answer</button>
+
+</div>

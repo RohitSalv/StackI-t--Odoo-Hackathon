@@ -1,0 +1,9 @@
+.notifications-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.notification-card {
+  margin-bottom: 15px;
+}

@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="navbar">
+  <span class="logo">📝 StackIt</span>
+
+  <span class="spacer"></span>
+
+  <button mat-button routerLink="/">Home</button>
+  <button mat-button routerLink="/ask-question">Ask</button>
+
+  <button mat-icon-button matBadge="3" matBadgeColor="warn" (click)="goToNotifications()">
+    <mat-icon>notifications</mat-icon>
+  </button>
+</mat-toolbar>

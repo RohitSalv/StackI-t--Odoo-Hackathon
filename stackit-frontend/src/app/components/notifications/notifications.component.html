@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+
+<div class="notifications-container">
+
+  <h2>Notifications ({{ notifications.length }})</h2>
+
+  <mat-card *ngFor="let notification of notifications" class="notification-card">
+    <p>{{ notification.message }}</p>
+    <small>{{ notification.createdAt | date:'short' }}</small>
+  </mat-card>
+
+</div>

@@ -1,0 +1,24 @@
+<!-- Navbar -->
+<app-navbar></app-navbar>
+
+<div class="container">
+
+  <!-- Action bar -->
+  <div class="toolbar">
+    <button routerLink="/ask-question">Ask New Question</button>
+
+    <input type="text" placeholder="Search..." [(ngModel)]="searchQuery">
+
+    <button (click)="goToNotifications()">🔔</button>
+  </div>
+
+  <!-- Question list -->
+  <div *ngFor="let question of questions" class="question-card">
+    <h3>{{ question.title }}</h3>
+    <p>{{ question.description }}</p>
+    <small>By {{ question.username }} | {{ question.createdAt | date }}</small>
+    <br>
+    <button [routerLink]="['/question', question.id]">View</button>
+  </div>
+
+</div>
