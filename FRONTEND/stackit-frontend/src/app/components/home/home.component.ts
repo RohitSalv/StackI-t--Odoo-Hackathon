@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from 'src/app/services/question-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,10 @@ export class HomeComponent implements OnInit {
   totalQuestions = 0;
   searchQuery = '';
 
-  constructor(private questionService: QuestionService) { }
+  constructor(
+    private questionService: QuestionService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.fetchQuestions();
@@ -30,11 +34,11 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  goToNotifications() {
-    // navigate to notification page
+  goToNotifications(): void {
+    this.router.navigate(['/notifications']);
   }
 
-  pageChanged(event: any) {
-    // handle pagination logic (if needed)
+  pageChanged(event: any): void {
+    // optional pagination handling (if implemented later)
   }
 }

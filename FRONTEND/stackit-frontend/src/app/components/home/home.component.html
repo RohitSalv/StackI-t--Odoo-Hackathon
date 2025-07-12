@@ -1,4 +1,3 @@
-<!-- Navbar -->
 <app-navbar></app-navbar>
 
 <div class="container">
@@ -15,8 +14,8 @@
   <!-- Question list -->
   <div *ngFor="let question of questions" class="question-card">
     <h3>{{ question.title }}</h3>
-    <p>{{ question.description }}</p>
-    <small>By {{ question.username }} | {{ question.createdAt | date }}</small>
+    <p [innerHTML]="question.description | slice:0:300"></p>
+    <small>Posted on {{ question.createdAt | date:'short' }}</small>
     <br>
     <button [routerLink]="['/question', question.id]">View</button>
   </div>
